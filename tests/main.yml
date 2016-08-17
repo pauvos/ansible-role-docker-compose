@@ -1,0 +1,14 @@
+---
+- name: run tests
+  hosts: localhost
+  become: true
+  roles:
+    - { role: pauvos.docker-compose }
+  tasks:
+    - name: test if docker-compose is installed
+      command: docker-compose --version
+      register: installed_version
+      changed_when: false
+
+    - name: docker-compose version is "{{ installed_version.stdout }}"
+      debug: msg="{{ installed_version }}"
