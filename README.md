@@ -1,4 +1,4 @@
-# Ansible Role: docker-compose [![Build Status](https://drone.chmuul.net/api/badges/aal/ansible-role-docker-compose/status.svg)](https://drone.chmuul.net/aal/ansible-role-docker-compose)
+# Ansible Role: docker-compose [![Build Status](https://travis-ci.org/pauvos/ansible-role-docker-compose.svg?branch=master)](https://travis-ci.org/pauvos/ansible-role-docker-compose)
 
 Installs docker-compose with releases from [github.com/docker/compose](https://github.com/docker/compose/) using pip.
 
