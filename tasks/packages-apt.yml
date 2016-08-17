@@ -8,11 +8,18 @@
     - docker-compose
     - python-pip
 
+- name: install packages
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+    cache_valid_time: "{{ docker_compose_cache_valid_time }}"
+  with_items:
+    - apt-transport-https
+    - ca-certificates
+
 - name: install python-setuptools
   apt:
     name: python-setuptools
-    update_cache: true
-    cache_valid_time: 84600
 
 - name: install pip
   easy_install:
