@@ -1,0 +1,3 @@
+docker_compose_version: 1.8.0
+docker_compose_sha256sum: ebc6ab9ed9c971af7efec074cff7752593559496d0d5f7afb6bfd0e0310961ff
+docker_compose_cache_valid_time: 84600

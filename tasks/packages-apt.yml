@@ -1,0 +1,19 @@
+---
+- name: purge docker-compose and pip package
+  apt:
+    name: "{{ item }}"
+    state: absent
+    purge: yes
+  with_items:
+    - docker-compose
+    - python-pip
+
+- name: install python-setuptools
+  apt:
+    name: python-setuptools
+    update_cache: true
+    cache_valid_time: 84600
+
+- name: install pip
+  easy_install:
+    name: pip

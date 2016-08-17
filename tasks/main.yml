@@ -1,0 +1,22 @@
+---
+- include: packages-apt.yml
+  when: ansible_pkg_mgr == "apt"
+
+- include: packages-yum.yml
+  when: ansible_pkg_mgr == "yum"
+
+- name: get docker-compose
+  get_url:
+    url: "https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-Linux-x86_64"
+    dest: /usr/local/bin/docker-compose
+    owner: root
+    mode: 0755
+    sha256sum: "{{ docker_compose_sha256sum }}"
+
+- name: install docker-compose stuff with pip
+  pip:
+    name: " {{ item }}"
+  with_items:
+    - pyyaml
+    - docker-py
+    - docker-compose
