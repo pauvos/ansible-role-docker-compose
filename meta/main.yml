@@ -25,7 +25,5 @@ galaxy_info:
     - xenial
   galaxy_tags:
     - docker
-    - docker-compose
-    - docker-service
     - system
 dependencies: []
